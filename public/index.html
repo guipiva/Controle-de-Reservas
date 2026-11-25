@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Página única da aplicação. O conteúdo de cada tela é desenhado pelo js/app.js
+  dentro do <main id="conteudo">, de acordo com o endereço depois do # na URL.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas e Atividades — Fatec</title>
+  <link rel="icon" href="img/icone.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <!-- Link de acessibilidade: quem usa teclado ou leitor de tela pula direto para o conteúdo -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Barra superior: menu (celular), nome do sistema, notificações e usuário. Fica escondida no login. -->
+  <header class="topo" id="topo" hidden>
+    <button class="btn-icone so-mobile" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <a class="marca" href="#/painel"><img src="img/icone.svg" alt="" width="28" height="28"> <span>Reservas <small>Fatec</small></span></a>
+    <div class="topo-dir">
+      <div class="notif">
+        <button class="btn-icone" id="btn-notif" aria-label="Notificações" aria-expanded="false" aria-controls="painel-notif">
+          🔔<span class="contador" id="notif-cont" hidden>0</span>
+        </button>
+        <div class="painel-notif" id="painel-notif" hidden></div>
+      </div>
+      <span class="usuario" id="usuario-nome"></span>
+      <button class="btn secundario pequeno" id="btn-sair">Sair</button>
+    </div>
+  </header>
+
+  <!-- Menu lateral (montado conforme o perfil) + área principal onde as telas aparecem -->
+  <div class="layout">
+    <nav class="menu" id="menu" aria-label="Menu principal" hidden></nav>
+    <main id="conteudo" tabindex="-1"></main>
+  </div>
+
+  <!-- Mensagens flutuantes (aria-live faz o leitor de tela anunciar) e janela modal reutilizável -->
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+  <dialog id="dialogo"></dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

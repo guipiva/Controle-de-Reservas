@@ -1,0 +1,16 @@
+{
+  "name": "reservas-fatec",
+  "version": "1.0.0",
+  "description": "Sistema de Gestão de Atividades Extracurriculares e Reserva de Espaços e Equipamentos (projeto acadêmico)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node --no-warnings src/server.js",
+    "seed": "node --no-warnings src/seed.js",
+    "test": "node --no-warnings --test tests/criterios.test.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT"
+}
